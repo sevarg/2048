@@ -1,23 +1,23 @@
 @import "helpers";
-@import "fonts/clear-sans.css";
+/* @import "fonts/source-sans-pro.css"; */
 
 $field-width: 500px;
-$grid-spacing: 15px;
-$grid-row-cells: 4;
+$grid-spacing: 5px;
+$grid-row-cells: 5;
 $tile-size: ($field-width - $grid-spacing * ($grid-row-cells + 1)) / $grid-row-cells;
 $tile-border-radius: 3px;
 
 $mobile-threshold: $field-width + 20px;
 
-$text-color: #776E65;
-$bright-text-color: #f9f6f2;
+$text-color: #fefefe;
+$bright-text-color: #ffffff;
 
-$tile-color: #eee4da;
-$tile-gold-color: #edc22e;
+$tile-color: #336699;
+$tile-gold-color: #6699CC;
 $tile-gold-glow-color: lighten($tile-gold-color, 15%);
 
 $game-container-margin-top: 40px;
-$game-container-background: #bbada0;
+$game-container-background: #006699;
 
 $transition-speed: 100ms;
 
@@ -25,9 +25,9 @@ html, body {
   margin: 0;
   padding: 0;
 
-  background: #faf8ef;
+  background: #001122;
   color: $text-color;
-  font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 18px;
 }
 
@@ -336,17 +336,33 @@ hr {
   $limit: 11;
 
   // Colors for all 11 states, false = no special color
-  $special-colors: false false, // 2
-                   false false, // 4
-                   #f78e48 true, // 8
-                   #fc5e2e true, // 16
-                   #ff3333 true, // 32
-                   #ff0000 true, // 64
-                   false true, // 128
-                   false true, // 256
-                   false true, // 512
-                   false true, // 1024
-                   false true; // 2048
+  $special-colors: false false, // 2 A
+                   lighten($tile-color, 3%) true, // 4 B
+                   lighten($tile-color, 6%) true, // 8 C
+                   lighten($tile-color, 9%) true, // 16 D
+                   lighten($tile-color, 12%) true, // 32 E
+                   lighten($tile-color, 15%) true, // 64 F
+                   lighten($tile-color, 18%) true, // 128 G
+                   lighten($tile-color, 21%) true, // 256 H
+                   lighten($tile-color, 24%) true, // 512 I
+                   lighten($tile-color, 27%) true, // 1024 J
+                   lighten($tile-color, 30%) true, // 2048 K
+                   lighten($tile-color, 33%) true, // 4096 L
+                   lighten($tile-color, 36%) true, // 8192 M
+                   lighten($tile-color, 39%) true, // 16384 N
+                   lighten($tile-color, 42%) true, // 32768 O
+                   lighten($tile-color, 45%) true, // 65536 P
+                   lighten($tile-color, 48%) true, // 131072 Q
+                   lighten($tile-color, 51%) true, // 262144 R
+                   lighten($tile-color, 54%) true, // 524288 S
+                   lighten($tile-color, 57%) true, // 1048576 T
+                   lighten($tile-color, 60%) true, // 2097152 U
+                   lighten($tile-color, 63%) true, // 4194304 V
+                   lighten($tile-color, 66%) true, // 8388608 W
+                   lighten($tile-color, 69%) true, // 16777216 X
+                   lighten($tile-color, 71%) true, // 33554432 Y
+                   lighten($tile-color, 74%) true; // 67108864 Z
+
 
   // Build tile colors
   @while $exponent <= $limit {

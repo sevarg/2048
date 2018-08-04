@@ -1,3 +1,32 @@
+var letter = {
+  2: 'A',
+  4: 'B',
+  8: 'C',
+  16: 'D',
+  32: 'E',
+  64: 'F',
+  128: 'G',
+  256: 'H',
+  512: 'I',
+  1024: 'J',
+  2048: 'K',
+  4096: 'L',
+  8192: 'M',
+  16384: 'N',
+  32768: 'O',
+  65536: 'P',
+  131072: 'Q',
+  262144: 'R',
+  524288: 'S',
+  1048576: 'T',
+  2097152: 'U',
+  4194304: 'V',
+  8388608: 'W',
+  16777216: 'X',
+  33554432: 'Y',
+  67108864: 'Z'
+};
+
 function HTMLActuator() {
   this.tileContainer    = document.querySelector(".tile-container");
   this.scoreContainer   = document.querySelector(".score-container");
@@ -62,7 +91,7 @@ HTMLActuator.prototype.addTile = function (tile) {
   this.applyClasses(wrapper, classes);
 
   inner.classList.add("tile-inner");
-  inner.textContent = tile.value;
+  inner.textContent = letter[tile.value];
 
   if (tile.previousPosition) {
     // Make sure that the tile gets rendered in the previous position first
